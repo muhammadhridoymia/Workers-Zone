@@ -5,6 +5,7 @@ import Register from './Pages/Register/Register';
 import WorkerProfile from './Pages/WorkerProfile/WorkerProfile';
 import Search from './Pages/SearchWorker/Search';
 import Profile from './Pages/Profile/Profile';
+import Message from './Pages/Message/Message';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/worker/:id" element={<WorkerProfile />} />
         <Route path="/search/:skill/:location" element={<Search />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/messages" element={<Message />} />
       </Routes>
     </Router>
   );

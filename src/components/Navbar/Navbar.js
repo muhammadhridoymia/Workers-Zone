@@ -29,11 +29,11 @@ const Navigation = () => {
           </button>
 
           <button
-            onClick={() => {setActiveTab("messages"); navigate("/messages");}}
-            className={activeTab === "messages" ? "nav-btn active" : "nav-btn"}
+            onClick={() => {setActiveTab("notifications"); navigate("/messages");}}
+            className={activeTab === "notifications" ? "nav-btn active" : "nav-btn"}
             >
             <Info className="nav-icon" />
-            <span className="nav-label">Messages</span>
+            <span className="nav-label">Notifications</span>
           </button>
         </div>
       </div>

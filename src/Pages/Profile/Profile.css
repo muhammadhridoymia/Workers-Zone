@@ -4,7 +4,8 @@
   padding: 25px 40px;
   max-width: 1200px;
   margin: auto;
-  background-color: #eeefef;
+  background-color: #ffffff;
+  border: 1px solid #1955cd;
 }
 
 /* LEFT SIDE */
@@ -57,10 +58,11 @@
 }
 
 .review-card {
-  background: #f8f8f8;
+  background: #fefffe;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 10px;
+  border: 1px solid #1f2021;
 }
 
 .review-card h4 {
