@@ -1,52 +1,21 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import "./Profile.css";
 
-const workers = [
-  {
-    id: 1,
+function Profile() {
+  const user = {
     name: "Rahim Uddin",
     skill: "Electrician",
     location: "Dhaka",
-    phone: "017XXXXXXXX",
-    whatsapp: "017XXXXXXXX",
+    phone: "+880123456789",
+    whatsapp: "+880123456789",
     education: "Diploma in Electrical Engineering",
-    experience: "5 years experience in home wiring and repair",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    id: 2,
-    name: "Karim Hasan",
-    skill: "Plumber",
-    location: "Mirpur",
-    phone: "018XXXXXXXX",
-    whatsapp: "018XXXXXXXX",
-    education: "Diploma in Plumbing Engineering",
-    experience: "3 years experience in plumbing services",
-    image: "https://randomuser.me/api/portraits/men/45.jpg"
-  },
-  {
-    id: 3,
-    name: "Jamal Mia",
-    skill: "Driver",
-    location: "Uttara",
-    phone: "019XXXXXXXX",
-    whatsapp: "019XXXXXXXX",
-    education: "Diploma in Driver Education",
-    experience: "7 years driving experience",
-    image: "https://randomuser.me/api/portraits/men/60.jpg"
-  }
-];
+    experience: "10 years",
+    bio: "Experienced electrician with 10 years of service. I specialize in residential and commercial electrical work, ensuring safety and quality in every project.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+  };
 
-const WorkerProfile = () => {
-  const { id } = useParams();
-  const worker = workers.find((w) => w.id === parseInt(id));
-
-  if (!worker) {
-    return <h2>Worker not found</h2>;
-  }
-
-    const portfolio = [
+  const portfolio = [
     "https://picsum.photos/300?1",
     "https://picsum.photos/300?2",
     "https://picsum.photos/300?3",
@@ -70,18 +39,18 @@ const WorkerProfile = () => {
 
       {/* LEFT SIDE */}
       <div className="profile-left">
-        <img src={worker.image} alt="profile" className="profile-img" />
+        <img src={user.image} alt="profile" className="profile-img" />
 
         <div className="user-info">
             <p></p>
-          <h2>{worker.name}</h2>
-          <p><strong>Skill:</strong> {worker.skill}</p>
-          <p><strong>Location:</strong> {worker.location}</p>
-            <p><strong>Phone:</strong> {worker.phone}</p>
-            <p><strong>WhatsApp:</strong> {worker.whatsapp}</p>
-            <p><strong>Education:</strong> {worker.education}</p>
-            <p><strong>Experience:</strong> {worker.experience}</p>
-          <p>{worker.bio}</p>
+          <h2>{user.name}</h2>
+          <p><strong>Skill:</strong> {user.skill}</p>
+          <p><strong>Location:</strong> {user.location}</p>
+            <p><strong>Phone:</strong> {user.phone}</p>
+            <p><strong>WhatsApp:</strong> {user.whatsapp}</p>
+            <p><strong>Education:</strong> {user.education}</p>
+            <p><strong>Experience:</strong> {user.experience}</p>
+          <p>{user.bio}</p>
         </div>
       </div>
 
@@ -89,7 +58,7 @@ const WorkerProfile = () => {
       <div className="profile-right">
 
         {/* Portfolio */}
-        <h2>Work Portfolio</h2>
+        <h2>My Portfolio</h2>
         <div className="portfolio-grid">
           {portfolio.map((photo, index) => (
             <img key={index} src={photo} alt="work" />
@@ -111,6 +80,6 @@ const WorkerProfile = () => {
       </div>
     </div>
   );
-};
+}
 
-export default WorkerProfile;
+export default Profile;

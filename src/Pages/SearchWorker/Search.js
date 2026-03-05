@@ -1,22 +1,21 @@
 import React from 'react'
 import Navbar from "../../components/Navbar/Navbar";    
 import WorkerCard from '../../components/WorkerCard/WorkerCard';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import "./Search.css";
 
 
 function Search() {
-    const navigate = useNavigate();
-    const [selected, setSelected] = React.useState("");
-    const [selectedSkill, setSelectedSkill] = React.useState("");
-    const [selectedLocation, setSelectedLocation] = React.useState("");
+    const { skill, location } = useParams();
+    const [selected, setSelected] = React.useState(`Searching for ${skill || "any skill"} in ${location || "any location"}`);
+    const [selectedSkill, setSelectedSkill] = React.useState(skill || "");
+    const [selectedLocation, setSelectedLocation] = React.useState(location || "");
     const skills = ["Electrician", "Plumber", "Driver", "AC-Mechanic", "Cleaner", "Painter"];
     const locations = ["Dhaka", "Mirpur", "Uttara", "Gulshan", "Banani"];
 
     const handleSearch = () => {
         setSelected(`Searching for ${selectedSkill} in ${selectedLocation}`);
         // Implement search logic here
-        // alert(`Searching for ${selectedSkill} in ${selectedLocation}`);
     };
 
     //demo data for search result
