@@ -50,3 +50,15 @@
 .card:hover {
   background-color: #cbd5e1;
 }
+
+.featured {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.worker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
